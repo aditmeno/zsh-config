@@ -1,6 +1,5 @@
 export HOMEBREW_MAKE_JOBS="32"
 export GOPATH="$HOME/go"
-export JAVA_HOME=$(/usr/libexec/java_home)
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:$PATH
 
@@ -9,7 +8,7 @@ VSCODE="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/b
 PYTHON2_PACKAGES_PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin"
 PYTHON3_PACKAGES_PATH="/opt/local/Library/Frameworks/Python.framework/Versions/$(python3 --version | grep -o "\d\.\d")/bin"
 
-export PATH=$GOPATH/bin:$VSCODE:$JAVA_HOME/bin:$HOME/.rbenv/shims:$ANDROID_PATH:$PYTHON2_PACKAGES_PATH:$PYTHON3_PACKAGES_PATH:$PATH
+export PATH=$GOPATH/bin:$VSCODE:$HOME/.rbenv/shims:$ANDROID_PATH:$PYTHON2_PACKAGES_PATH:$PYTHON3_PACKAGES_PATH:$PATH
 
 eval "$(rbenv init -)"
 
@@ -21,6 +20,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # powerlevel9k config
 POWERLEVEL9K_SHOW_CHANGESET=true
 POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_BATTERY_STAGES=""
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context os_icon dir_writable dir vcs)
@@ -144,8 +144,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# iTerm2 Shell Integration 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# NVM Settings
 export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/aditya/.sdkman"
+[[ -s "/Users/aditya/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aditya/.sdkman/bin/sdkman-init.sh"
