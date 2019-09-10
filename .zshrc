@@ -19,8 +19,7 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # powerlevel9k config
 POWERLEVEL9K_SHOW_CHANGESET=true
-POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_BATTERY_STAGES=""
+POWERLEVEL9K_MODE='firacode-retina'
 POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=0
 source /usr/local/opt/powerlevel9k/powerlevel9k.zsh-theme
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context os_icon dir_writable dir vcs)
@@ -152,6 +151,6 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/aditya/.sdkman"
-[[ -s "/Users/aditya/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/aditya/.sdkman/bin/sdkman-init.sh"
+# Gcloud SDK
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
