@@ -3,14 +3,15 @@ export GOPATH="$HOME/go"
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:/usr/local/sbin:/opt/local/bin:/opt/local/sbin:$PATH
 
-ANDROID_TOOLS="/opt/local/share/java/android-sdk-macosx/platform-tools"
+# ANDROID_TOOLS="/opt/local/share/java/android-sdk-macosx/platform-tools/"
 VSCODE="/Applications/Visual Studio Code - Insiders.app/Contents/Resources/app/bin"
 PYTHON2_PACKAGES_PATH="/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin"
-PYTHON3_PACKAGES_PATH="/opt/local/Library/Frameworks/Python.framework/Versions/$(python3 --version | grep -o "\d\.\d")/bin"
+#PYTHON3_PACKAGES_PATH="/opt/local/Library/Frameworks/Python.framework/Versions/$(python3 --version | grep -o "\d\.\d")/bin"
 
-export PATH=$GOPATH/bin:$VSCODE:$HOME/.rbenv/shims:$ANDROID_PATH:$PYTHON2_PACKAGES_PATH:$PYTHON3_PACKAGES_PATH:$PATH
+export PATH=$GOPATH/bin:$VSCODE:$HOME/.rbenv/shims:$PYTHON2_PACKAGES_PATH:$PATH
 
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
 
 alias code-insiders=code
 
@@ -27,6 +28,8 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status command_execution_time root_indicator
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/aditya/.oh-my-zsh"
+
+export GIT_DUET_CO_AUTHORED_BY=1
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -154,3 +157,8 @@ export NVM_DIR="$HOME/.nvm"
 # Gcloud SDK
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
 source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+
+# K8s Autocompletion
+source <(kubectl completion zsh)
+source <(helm completion zsh)
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
